@@ -123,6 +123,20 @@
         h2 {
             color: #92fe9d;
         }
+        .home-button {
+            background-color: #00ffd5;
+            color: #000;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: #00bfa6;
+        }
     </style>
 </head>
 <body>
@@ -132,9 +146,22 @@
     <p>Master the Web: From Basics to Brilliance</p>
 </header>
 
+<!-- Home Button -->
+<div class="section">
+    <button class="home-button" onclick="scrollToSection('home')">🏠 Home</button>
+</div>
+
+<!-- Home Section -->
 <div class="section" id="home">
     <h2>Welcome 👋</h2>
-    <p>Explore our full guide to Web Technologies including syllabus, theory notes, labs, and essential resources!</p>
+    <p>This page serves as a comprehensive resource for Web Technologies, offering you an organized guide to the course, including:</p>
+    <ul>
+        <li><strong>Syllabus:</strong> A detailed breakdown of the course structure and objectives.</li>
+        <li><strong>Lab Manual:</strong> Hands-on practical exercises to enhance your learning.</li>
+        <li><strong>Notes:</strong> Downloadable notes to aid in your studies.</li>
+        <li><strong>References:</strong> External links to top resources for further exploration.</li>
+    </ul>
+    <p>Feel free to explore the sections and dive deep into the world of web development!</p>
 
     <div class="icon-grid">
         <div class="icon-box" onclick="scrollToSection('syllabus')">
@@ -156,6 +183,7 @@
     </div>
 </div>
 
+<!-- Syllabus Section -->
 <div class="section" id="syllabus">
     <h2>📘 Web Technology – Syllabus</h2>
     <p>Click on the items to explore each section.</p>
@@ -244,54 +272,53 @@
         </ul>
     </div>
 
-    <button class="accordion">Unit 8: Web Protocols and Security</button>
+    <button class="accordion">Unit 8: Web Security and Authentication</button>
     <div class="panel">
         <ul>
-            <li>HTTP Methods: GET, POST, PUT, DELETE</li>
+            <li>Common Web Vulnerabilities (XSS, SQL Injection)</li>
             <li>HTTPS and SSL/TLS</li>
-            <li>Authentication and Authorization</li>
-            <li>Cross-Site Scripting (XSS)</li>
-            <li>SQL Injection and Prevention</li>
+            <li>Authentication Mechanisms (JWT, OAuth)</li>
+            <li>Password Hashing and Salting</li>
         </ul>
     </div>
 
-    <button class="accordion">Unit 9: Web Services and APIs</button>
+    <button class="accordion">Unit 9: Web Performance Optimization</button>
     <div class="panel">
         <ul>
-            <li>Introduction to RESTful APIs</li>
-            <li>JSON and XML</li>
-            <li>Consuming APIs with AJAX and Fetch</li>
-            <li>Introduction to GraphQL</li>
-            <li>API Testing Tools (Postman)</li>
+            <li>Optimizing Images and Assets</li>
+            <li>Minification and Compression</li>
+            <li>Lazy Loading and Asynchronous Requests</li>
+            <li>Performance Testing Tools (Lighthouse, PageSpeed)</li>
         </ul>
     </div>
 
-    <button class="accordion">Unit 10: Modern Web Development Practices</button>
+    <button class="accordion">Unit 10: Responsive Web Design</button>
     <div class="panel">
         <ul>
-            <li>Version Control with Git & GitHub</li>
-            <li>Webpack, Babel, and NPM</li>
-            <li>Progressive Web Apps (PWA)</li>
-            <li>DevOps and CI/CD Basics</li>
-            <li>Introduction to Web Hosting & Deployment</li>
+            <li>Design Principles for Mobile-first Websites</li>
+            <li>Media Queries and Breakpoints</li>
+            <li>Responsive Frameworks (Bootstrap, Foundation)</li>
+            <li>Flexible Grid Layouts</li>
         </ul>
     </div>
+
 </div>
 
+<!-- Lab Section -->
 <div class="section" id="lab">
     <h2>🧪 Lab Manual</h2>
     <p>Get hands-on practice with labs and mini-projects.</p>
     <a class="download-btn" href="lab.html.pdf" target="_blank">📄 Download Lab Manual</a>
 </div>
 
+<!-- Notes Section -->
 <div class="section" id="notes">
     <h2>📄 Web Technology Notes</h2>
     <p>Access complete Web Technology notes (5 Units) here!</p>
-    <a class="download-btn" href="web-technology-notes.pdf" target="_blank">
-        📥 Download/View Notes
-    </a>
+    <a class="download-btn" href="web-technology-notes.pdf" target="_blank">📥 Download/View Notes</a>
 </div>
 
+<!-- References Section -->
 <div class="section" id="references">
     <h2>🔗 References</h2>
     <ul>
@@ -326,4 +353,3 @@
 
 </body>
 </html>
-
