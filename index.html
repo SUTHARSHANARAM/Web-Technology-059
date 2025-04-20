@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Technology_059</title>
     <style>
         * {
@@ -10,9 +11,17 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Dark Mode */
+        body.dark-mode {
+            background: #121212;
             color: #fff;
-            scroll-behavior: smooth;
+        }
+        /* Light Mode */
+        body.light-mode {
+            background: #f0f0f0;
+            color: #333;
         }
         header {
             text-align: center;
@@ -26,6 +35,24 @@
         }
         header p {
             font-size: 1.2em;
+        }
+        nav {
+            background-color: #111;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #00ffd5;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .section {
             padding: 40px 20px;
@@ -110,7 +137,7 @@
             margin-top: 50px;
         }
         ul {
-            list-style-type: square; /* Change bullet style to square */
+            list-style-type: square;
             padding-left: 20px;
         }
         a {
@@ -123,18 +150,56 @@
         h2 {
             color: #92fe9d;
         }
+        /* Toggle button */
+        .toggle-btn {
+            background-color: #00ffd5;
+            padding: 10px 20px;
+            border: none;
+            color: #000;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 8px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            transition: background-color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #00bfa6;
+        }
     </style>
 </head>
-<body>
+<body class="dark-mode">
+
+<button class="toggle-btn" onclick="toggleTheme()">🌙 / 🌞</button>
 
 <header>
     <h1>Web Technology_059</h1>
     <p>Master the Web: From Basics to Brilliance</p>
 </header>
 
+<nav>
+    <a href="#home">🏠 Home</a>
+    <a href="#syllabus">📘 Syllabus</a>
+    <a href="#lab">🧪 Lab Manual</a>
+    <a href="#notes">📄 Notes</a>
+    <a href="#references">🔗 References</a>
+</nav>
+
 <div class="section" id="home">
     <h2>Welcome 👋</h2>
-    <p>Explore our full guide to Web Technologies including syllabus, theory notes, labs, and essential resources!</p>
+    <p>Welcome to the Web Technology portal! Explore the syllabus, theory, lab exercises, and more using the tabs above.</p>
+    <h3>🎯 Purpose of Web Technology</h3>
+    <p>Web Technology aims to equip students and developers with knowledge of the technologies and tools required to design, develop, and deploy web-based applications and websites efficiently.</p>
+
+    <h3>🌟 Benefits of Learning Web Technology</h3>
+    <ul>
+        <li>Helps you build interactive and responsive websites.</li>
+        <li>Opens career opportunities in web development and design.</li>
+        <li>Enables better understanding of how the internet works.</li>
+        <li>Allows integration of multimedia and dynamic content.</li>
+        <li>Gives foundation for full-stack and app development.</li>
+    </ul>
 
     <div class="icon-grid">
         <div class="icon-box" onclick="scrollToSection('syllabus')">
@@ -247,57 +312,44 @@
     <button class="accordion">Unit 8: Web Protocols and Security</button>
     <div class="panel">
         <ul>
-            <li>HTTP Methods: GET, POST, PUT, DELETE</li>
-            <li>HTTPS and SSL/TLS</li>
-            <li>Authentication and Authorization</li>
+            <li>HTTP vs HTTPS</li>
+            <li>SSL Certificates and Web Security</li>
             <li>Cross-Site Scripting (XSS)</li>
-            <li>SQL Injection and Prevention</li>
+            <li>Cross-Site Request Forgery (CSRF)</li>
+            <li>Secure Authentication and Authorization</li>
         </ul>
     </div>
 
-    <button class="accordion">Unit 9: Web Services and APIs</button>
+    <button class="accordion">Unit 9: Web Application Deployment</button>
     <div class="panel">
         <ul>
-            <li>Introduction to RESTful APIs</li>
-            <li>JSON and XML</li>
-            <li>Consuming APIs with AJAX and Fetch</li>
-            <li>Introduction to GraphQL</li>
-            <li>API Testing Tools (Postman)</li>
+            <li>Web Hosting and Domain Name Systems (DNS)</li>
+            <li>Deployment on AWS / Azure / Netlify</li>
+            <li>Continuous Integration and Deployment</li>
         </ul>
     </div>
 
-    <button class="accordion">Unit 10: Modern Web Development Practices</button>
+    <button class="accordion">Unit 10: Future of Web Technologies</button>
     <div class="panel">
         <ul>
-            <li>Version Control with Git & GitHub</li>
-            <li>Webpack, Babel, and NPM</li>
-            <li>Progressive Web Apps (PWA)</li>
-            <li>DevOps and CI/CD Basics</li>
-            <li>Introduction to Web Hosting & Deployment</li>
+            <li>Web 3.0 and Decentralized Web</li>
+            <li>Artificial Intelligence Integration</li>
+            <li>Progressive Web Apps (PWAs)</li>
+            <li>VR/AR in Web Development</li>
         </ul>
     </div>
-</div>
-
-<div class="section" id="lab">
-    <h2>🧪 Lab Manual</h2>
-    <p>Get hands-on practice with labs and mini-projects.</p>
-    <a class="download-btn" href="lab.html.pdf" target="_blank">📄 Download Lab Manual</a>
-</div>
-
-<div class="section" id="notes">
-    <h2>📄 Web Technology Notes</h2>
-    <p>Access complete Web Technology notes (5 Units) here!</p>
-    <a class="download-btn" href="web-technology-notes.pdf" target="_blank">
-        📥 Download/View Notes
-    </a>
 </div>
 
 <div class="section" id="references">
     <h2>🔗 References</h2>
+    <p>These references will help you in your journey of learning Web Technologies:</p>
     <ul>
-        <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs - HTML</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN Web Docs - CSS</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs - JavaScript</a></li>
+        <li><a href="https://www.freecodecamp.org/">freeCodeCamp</a></li>
         <li><a href="https://www.w3schools.com/">W3Schools</a></li>
-        <li><a href="https://web.dev/">Google Web Dev Resources</a></li>
+        <li><a href="https://www.webplatform.org/">Web Platform Docs</a></li>
     </ul>
 </div>
 
@@ -310,16 +362,24 @@
         document.getElementById(id).scrollIntoView({ behavior: "smooth" });
     }
 
+    // Dark/Light Mode Toggle Function
+    function toggleTheme() {
+        const body = document.body;
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        }
+    }
+
     const accordions = document.querySelectorAll(".accordion");
     accordions.forEach(acc => {
         acc.addEventListener("click", function() {
             this.classList.toggle("active");
             const panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
+            panel.style.display = (panel.style.display === "block") ? "none" : "block";
         });
     });
 </script>
